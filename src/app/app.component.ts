@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -9,5 +9,13 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  constructor(private router: Router) {}
+
+  navigateTo(route: string): void {
+    this.router.navigate([route]);
+  }
+
+  
+
   title = 'app101';
 }
